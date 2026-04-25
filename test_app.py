@@ -4,7 +4,7 @@
 from app import check_url
 def test_google_is_up():
     result = check_url("https://google.com")
-    assert result["status"] =="up"
+    assert result["status"] =="UP"
 
 def test_bad_url_is_down():
     result = check_url("https://httpbin.org/status/50")
