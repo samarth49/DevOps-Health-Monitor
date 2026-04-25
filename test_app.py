@@ -8,4 +8,4 @@ def test_google_is_up():
 
 def test_bad_url_is_down():
     result = check_url("https://httpbin.org/status/50")
-    assert result["status":"DOWN"]
+    assert result["status"] == "DOWN"
