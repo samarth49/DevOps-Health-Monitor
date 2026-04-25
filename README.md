@@ -18,3 +18,6 @@ docker run -d \
 
 # Get the initial admin password
 docker exec jenkins cat /var/jenkins_home/secrets/initialAdminPassword
+
+install python & pip into the jenkins container
+docker exec -u 0 jenkins apt-get update ; docker exec -u 0 jenkins apt-get install -y python3 python3-pip
