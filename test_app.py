@@ -7,5 +7,5 @@ def test_google_is_up():
     assert result["status"] =="UP"
 
 def test_bad_url_is_down():
-    result = check_url("https://httpbin.org/status/50")
+    result = check_url("http://localhost:9999")
     assert result["status"] == "DOWN"
