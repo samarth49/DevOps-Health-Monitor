@@ -52,4 +52,4 @@ jobs:
 
     - name: Failure message
       if: failure()
-      run: echo "❌ Pipeline failed! Check the logs."
+      run: echo "❌ Pipeline failed! Check the logs first."
