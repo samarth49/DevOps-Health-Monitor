@@ -13,14 +13,14 @@ pipeline {
         stage('Install Dependencies') {
             steps {
                 echo "Installing Python dependencies..."
-                sh 'pip install -r requirements.txt'
+                sh 'docker run --rm -v $WORKSPACE:/app python:3.11-slim pip install -r /app/requirements.txt'
             }
         }
 
         stage('Run Tests') {
             steps {
                 echo "Running unit tests..."
-                sh 'pytest test_app.py -v'
+                sh 'docker run --rm -v $WORKSPACE:/app python:3.11-slim pytest /app/test_app.py -v'
             }
         }
 
