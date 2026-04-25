@@ -13,14 +13,17 @@ pipeline {
         stage('Install Dependencies') {
             steps {
                 echo "Installing Python dependencies..."
-                sh 'pip install --user -r requirements.txt'
+                sh '''
+                    python3 -m venv venv
+                    ./venv/bin/pip install -r requirements.txt
+                '''
             }
         }
 
         stage('Run Tests') {
             steps {
                 echo "Running unit tests..."
-                sh 'python -m pytest test_app.py -v'
+                sh './venv/bin/python -m pytest test_app.py -v'
             }
         }
 
